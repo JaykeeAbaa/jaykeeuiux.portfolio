@@ -1,0 +1,739 @@
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Jaykee Aba-a — UI/UX &amp; Web Designer</title>
+    <meta name="description" content="Jaykee Aba-a — UI/UX and Web Designer. Pixel perfectionist crafting high-performing, conversion-focused websites and interfaces.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+      html{scroll-behavior:smooth}
+      @media (prefers-reduced-motion: no-preference){
+        .reveal{opacity:0; transform:translateY(16px); transition:opacity .6s ease, transform .6s ease}
+        .reveal.is-visible{opacity:1; transform:none}
+      }
+    </style>
+  </head>
+  <body class="antialiased bg-white text-neutral-900" style="font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;">
+    <!-- Header -->
+    <header class="sticky top-0 z-50 bg-white/80 backdrop-blur border-b border-neutral-200/60">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="flex items-center justify-between h-16">
+          <a href="#" class="flex items-center gap-2">
+            <div class="h-8 w-8 rounded-md bg-gradient-to-tr from-blue-600 to-indigo-500 text-white grid place-items-center">
+              <span class="text-sm font-semibold tracking-tight">JA</span>
+            </div>
+            <span class="text-neutral-900 text-[15px] font-semibold tracking-tight">Jaykee Aba-a</span>
+          </a>
+
+          <nav class="hidden md:flex items-center gap-8">
+            <a href="#projects" class="text-[15px] text-neutral-700 hover:text-neutral-900 transition">Projects</a>
+            <a href="#services" class="text-[15px] text-neutral-700 hover:text-neutral-900 transition">Services</a>
+            <a href="#process" class="text-[15px] text-neutral-700 hover:text-neutral-900 transition">Process</a>
+            <a href="#testimonials" class="text-[15px] text-neutral-700 hover:text-neutral-900 transition">Reviews</a>
+            <a href="#contact" class="text-[15px] text-neutral-700 hover:text-neutral-900 transition">Contact</a>
+          </nav>
+
+          <div class="flex items-center gap-3">
+            <a href="#contact" class="hidden sm:inline-flex items-center gap-2 rounded-full bg-neutral-900 text-white px-4 py-2 text-[14px] font-medium hover:bg-neutral-800 transition">
+              <i data-lucide="send" class="w-4 h-4"></i>
+              Contact Me
+            </a>
+            <button id="mobileMenuBtn" class="md:hidden inline-flex items-center justify-center w-9 h-9 rounded-md border border-neutral-200 hover:bg-neutral-50">
+              <i data-lucide="menu" class="w-5 h-5"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Mobile menu -->
+        <div id="mobileMenu" class="md:hidden hidden border-t border-neutral-200 py-3">
+          <div class="flex flex-col gap-2">
+            <a href="#projects" class="px-2 py-2 rounded-md hover:bg-neutral-50 text-[15px]">Projects</a>
+            <a href="#services" class="px-2 py-2 rounded-md hover:bg-neutral-50 text-[15px]">Services</a>
+            <a href="#process" class="px-2 py-2 rounded-md hover:bg-neutral-50 text-[15px]">Process</a>
+            <a href="#testimonials" class="px-2 py-2 rounded-md hover:bg-neutral-50 text-[15px]">Reviews</a>
+            <a href="#contact" class="px-2 py-2 rounded-md hover:bg-neutral-50 text-[15px]">Contact</a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="relative">
+      <div class="absolute inset-x-0 -top-24 h-72 bg-gradient-to-b from-blue-50/50 to-transparent pointer-events-none"></div>
+      <div class="max-w-7xl mx-auto px-6 pt-16 pb-12">
+        <div class="mx-auto max-w-3xl text-center reveal">
+          <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-neutral-200 bg-white shadow-sm">
+            <span class="relative flex h-2.5 w-2.5">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
+            </span>
+            <span class="text-[13px] text-neutral-700">Available for new projects</span>
+          </div>
+
+          <h1 class="mt-6 text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-neutral-900">
+              Designing for people, not just pixels.
+          </h1>
+          <p class="mt-5 text-[16px] leading-7 text-neutral-600">
+            I'm Jaykee Aba-a, a UI/UX and web designer creating clean, user-friendly, and performance-driven digital experiences. From concept to launch, I design websites that engage users and support business growth.
+          </p>
+
+          <div class="mt-8 flex flex-wrap items-center justify-center gap-3">
+            <a href="#contact" class="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-blue-600 to-indigo-500 text-white px-5 py-2.5 text-[14px] font-medium shadow-sm hover:brightness-110 transition">
+              <i data-lucide="sparkles" class="w-4 h-4"></i>
+              Start a Project
+            </a>
+            <a href="#projects" class="inline-flex items-center gap-2 rounded-full border border-neutral-300 bg-white text-neutral-900 px-5 py-2.5 text-[14px] font-medium hover:bg-neutral-50 transition">
+              <i data-lucide="folder-open" class="w-4 h-4"></i>
+              My Projects
+            </a>
+          </div>
+
+          <div class="mt-6 flex flex-wrap items-center justify-center gap-2 text-[13px] text-neutral-600">
+            <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full border border-neutral-200 bg-white">
+              <i data-lucide="badge-check" class="w-3.5 h-3.5 text-blue-600"></i> Verified Freelancer
+            </span>
+            <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full border border-neutral-200 bg-white">
+              <i data-lucide="clock" class="w-3.5 h-3.5 text-blue-600"></i> Fast Turnaround
+            </span>
+            <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full border border-neutral-200 bg-white">
+              <i data-lucide="shield-check" class="w-3.5 h-3.5 text-blue-600"></i> Quality First
+            </span>
+          </div>
+
+          <div class="mt-10 flex items-center justify-center gap-6">
+            <a href="https://github.com/JaykeeAbaa" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded flex items-center justify-center hover:bg-neutral-100 transition">
+              <i data-lucide="github" class="w-5 h-5 text-neutral-600"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/jaykee-aba-a-a56bb627b/" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded flex items-center justify-center hover:bg-neutral-100 transition">
+              <i data-lucide="linkedin" class="w-5 h-5 text-neutral-600"></i>
+            </a>
+            <a href="https://www.instagram.com/jaykeeuiux/" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded flex items-center justify-center hover:bg-neutral-100 transition">
+              <i data-lucide="instagram" class="w-5 h-5 text-neutral-600"></i>
+            </a>
+            <a href="https://www.tiktok.com/@codeandcoffee.dev?lang=en" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded flex items-center justify-center hover:bg-neutral-100 transition">
+              <svg class="w-5 h-5 text-neutral-600" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    
+
+    <!-- Projects -->
+    <section id="projects" class="relative">
+      <div class="max-w-7xl mx-auto px-6 py-12">
+        <div class="flex items-center justify-between reveal">
+          <h2 class="text-2xl sm:text-3xl font-semibold tracking-tight text-neutral-900">Check Out My Projects</h2>
+          <div class="hidden sm:flex items-center gap-2">
+            <button id="projPrev" class="inline-flex items-center justify-center w-9 h-9 rounded-md border border-neutral-200 hover:bg-neutral-50">
+              <i data-lucide="chevron-left" class="w-5 h-5"></i>
+            </button>
+            <button id="projNext" class="inline-flex items-center justify-center w-9 h-9 rounded-md border border-neutral-200 hover:bg-neutral-50">
+              <i data-lucide="chevron-right" class="w-5 h-5"></i>
+            </button>
+          </div>
+        </div>
+
+        <div class="mt-6 reveal">
+          <div id="projScroller" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Card 1 -->
+            <article class="rounded-2xl border border-neutral-200 bg-white shadow-sm hover:shadow transition">
+              <div class="p-4 flex items-center justify-between">
+                <div class="flex items-center gap-2">
+                  <span class="inline-flex h-7 w-7 rounded-md bg-emerald-600/10 text-emerald-700 items-center justify-center">
+                    <i data-lucide="leaf" class="w-4 h-4"></i>
+                  </span>
+                  <div>
+                    <p class="text-[14px] font-semibold tracking-tight">Verdure</p>
+                    <p class="text-[12px] text-neutral-600">Restaurant Website</p>
+                  </div>
+                </div>
+                <a href="https://jaykeeabaa.github.io/verdure/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 text-[12px] text-blue-700 hover:underline">
+                  Live <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+                </a>
+              </div>
+              <div class="overflow-hidden rounded-b-2xl">
+                <img src="verdure.png" alt="Verdure restaurant website" class="w-full h-56 object-cover">
+              </div>
+              <div class="p-4">
+                <p class="text-[14px] text-neutral-700">Modern seasonal restaurant website celebrating local produce, wood-fired flavors, and farm-to-table dining experiences.</p>
+                <div class="mt-4 flex items-center gap-3 text-[12px] text-neutral-600">
+                  <span class="inline-flex items-center gap-1"><i data-lucide="calendar" class="w-3.5 h-3.5"></i> 2025</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- Card 2 -->
+            <article class="rounded-2xl border border-neutral-200 bg-white shadow-sm hover:shadow transition">
+              <div class="p-4 flex items-center justify-between">
+                <div class="flex items-center gap-2">
+                  <span class="inline-flex h-7 w-7 rounded-md bg-blue-600/10 text-blue-700 items-center justify-center">
+                    <i data-lucide="building-2" class="w-4 h-4"></i>
+                  </span>
+                  <div>
+                    <p class="text-[14px] font-semibold tracking-tight">Proper</p>
+                    <p class="text-[12px] text-neutral-600">Real Estate Website</p>
+                  </div>
+                </div>
+                <a href="https://proper-brown.vercel.app/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 text-[12px] text-blue-700 hover:underline">
+                  Live <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+                </a>
+              </div>
+              <div class="overflow-hidden rounded-b-2xl">
+                <img src="proper.png" alt="Proper real estate website" class="w-full h-56 object-cover">
+              </div>
+              <div class="p-4">
+                <p class="text-[14px] text-neutral-700">Premium apartment development website with modern design, pricing tiers, and seamless user experience for property sales.</p>
+                <div class="mt-4 flex items-center gap-3 text-[12px] text-neutral-600">
+                  <span class="inline-flex items-center gap-1"><i data-lucide="calendar" class="w-3.5 h-3.5"></i> 2025</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- Card 3 -->
+            <article class="rounded-2xl border border-neutral-200 bg-white shadow-sm hover:shadow transition">
+              <div class="p-4 flex items-center justify-between">
+                <div class="flex items-center gap-2">
+                  <span class="inline-flex h-7 w-7 rounded-md bg-blue-600/10 text-blue-700 items-center justify-center">
+                    <i data-lucide="shopping-cart" class="w-4 h-4"></i>
+                  </span>
+                  <div>
+                    <p class="text-[14px] font-semibold tracking-tight">QuickMart</p>
+                    <p class="text-[12px] text-neutral-600">E-commerce Store</p>
+                  </div>
+                </div>
+                <a href="https://quickmart-five.vercel.app/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 text-[12px] text-blue-700 hover:underline">
+                  Live <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+                </a>
+              </div>
+              <div class="overflow-hidden rounded-b-2xl">
+                <img src="quickmart.png" alt="QuickMart e-commerce website" class="w-full h-56 object-cover">
+              </div>
+              <div class="p-4">
+                <p class="text-[14px] text-neutral-700">Modern electronics e-commerce platform with product categories, pricing tiers, and seamless shopping experience.</p>
+                <div class="mt-4 flex items-center gap-3 text-[12px] text-neutral-600">
+                  <span class="inline-flex items-center gap-1"><i data-lucide="calendar" class="w-3.5 h-3.5"></i> 2025</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- Card 4 -->
+            <article class="rounded-2xl border border-neutral-200 bg-white shadow-sm hover:shadow transition">
+              <div class="p-4 flex items-center justify-between">
+                <div class="flex items-center gap-2">
+                  <span class="inline-flex h-7 w-7 rounded-md bg-purple-600/10 text-purple-700 items-center justify-center">
+                    <i data-lucide="users" class="w-4 h-4"></i>
+                  </span>
+                  <div>
+                    <p class="text-[14px] font-semibold tracking-tight">Debbie Shadid</p>
+                    <p class="text-[12px] text-neutral-600">Business Coach Website</p>
+                  </div>
+                </div>
+                <a href="https://coach-debbie.vercel.app/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 text-[12px] text-blue-700 hover:underline">
+                  Live <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+                </a>
+              </div>
+              <div class="overflow-hidden rounded-b-2xl">
+                <img src="debbie.png" alt="Debbie Shadid coaching website" class="w-full h-56 object-cover">
+              </div>
+              <div class="p-4">
+                <p class="text-[14px] text-neutral-700">Professional coaching website with clear messaging, client testimonials, and streamlined conversion-focused design.</p>
+                <div class="mt-4 flex items-center gap-3 text-[12px] text-neutral-600">
+                  <span class="inline-flex items-center gap-1"><i data-lucide="calendar" class="w-3.5 h-3.5"></i> 2025</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- Card 5 -->
+            <article class="rounded-2xl border border-neutral-200 bg-white shadow-sm hover:shadow transition">
+              <div class="p-4 flex items-center justify-between">
+                <div class="flex items-center gap-2">
+                  <span class="inline-flex h-7 w-7 rounded-md bg-amber-600/10 text-amber-700 items-center justify-center">
+                    <i data-lucide="home" class="w-4 h-4"></i>
+                  </span>
+                  <div>
+                    <p class="text-[14px] font-semibold tracking-tight">Furnish</p>
+                    <p class="text-[12px] text-neutral-600">Furniture E-commerce</p>
+                  </div>
+                </div>
+                <a href="https://furnish-zeta.vercel.app/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 text-[12px] text-blue-700 hover:underline">
+                  Live <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+                </a>
+              </div>
+              <div class="overflow-hidden rounded-b-2xl">
+                <img src="furnish.png" alt="Furnish furniture website" class="w-full h-56 object-cover">
+              </div>
+              <div class="p-4">
+                <p class="text-[14px] text-neutral-700">Modern furniture e-commerce platform with curated collections, product galleries, and seamless shopping experience.</p>
+                <div class="mt-4 flex items-center gap-3 text-[12px] text-neutral-600">
+                  <span class="inline-flex items-center gap-1"><i data-lucide="calendar" class="w-3.5 h-3.5"></i> 2025</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- Card 6 -->
+            <article class="rounded-2xl border border-neutral-200 bg-white shadow-sm hover:shadow transition">
+              <div class="p-4 flex items-center justify-between">
+                <div class="flex items-center gap-2">
+                  <span class="inline-flex h-7 w-7 rounded-md bg-indigo-600/10 text-indigo-700 items-center justify-center">
+                    <i data-lucide="users" class="w-4 h-4"></i>
+                  </span>
+                  <div>
+                    <p class="text-[14px] font-semibold tracking-tight">Marqeto</p>
+                    <p class="text-[12px] text-neutral-600">Agency Platform</p>
+                  </div>
+                </div>
+                <a href="https://marqeto-agency.vercel.app/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 text-[12px] text-blue-700 hover:underline">
+                  Live <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+                </a>
+              </div>
+              <div class="overflow-hidden rounded-b-2xl">
+                <img src="marqeto.png" alt="Marqeto agency platform" class="w-full h-56 object-cover">
+              </div>
+              <div class="p-4">
+                <p class="text-[14px] text-neutral-700">Elite freelancer marketplace connecting businesses with pre-vetted specialists in paid media, SEO, and growth marketing.</p>
+                <div class="mt-4 flex items-center gap-3 text-[12px] text-neutral-600">
+                  <span class="inline-flex items-center gap-1"><i data-lucide="calendar" class="w-3.5 h-3.5"></i> 2025</span>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services -->
+    <section id="services" class="relative">
+      <div class="max-w-7xl mx-auto px-6 py-12 reveal">
+        <h2 class="text-2xl sm:text-3xl font-semibold tracking-tight text-neutral-900">How I Help Brands Elevate Their Presence</h2>
+        <div class="mt-6 grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          <!-- Service Card -->
+          <div class="rounded-xl border border-neutral-200 bg-white p-5 hover:shadow-sm transition">
+            <div class="flex items-center gap-3">
+              <span class="inline-flex h-9 w-9 rounded-lg bg-neutral-900 text-white items-center justify-center">
+                <i data-lucide="layout-dashboard" class="w-4.5 h-4.5"></i>
+              </span>
+              <p class="text-[15px] font-semibold tracking-tight">Strategic Web Design</p>
+            </div>
+            <p class="mt-3 text-[14px] text-neutral-700">Clean, modern design aligned to business goals, brand voice, and user intent.</p>
+          </div>
+
+          <div class="rounded-xl border border-neutral-200 bg-white p-5 hover:shadow-sm transition">
+            <div class="flex items-center gap-3">
+              <span class="inline-flex h-9 w-9 rounded-lg bg-neutral-900 text-white items-center justify-center">
+                <i data-lucide="code-2" class="w-4.5 h-4.5"></i>
+              </span>
+              <p class="text-[15px] font-semibold tracking-tight">Performance‑Optimized Build</p>
+            </div>
+            <p class="mt-3 text-[14px] text-neutral-700">Fast, resilient, accessible experiences using best practices for speed and SEO.</p>
+          </div>
+
+          <div class="rounded-xl border border-neutral-200 bg-white p-5 hover:shadow-sm transition">
+            <div class="flex items-center gap-3">
+              <span class="inline-flex h-9 w-9 rounded-lg bg-neutral-900 text-white items-center justify-center">
+                <i data-lucide="goal" class="w-4.5 h-4.5"></i>
+              </span>
+              <p class="text-[15px] font-semibold tracking-tight">Conversion‑Focused UX</p>
+            </div>
+            <p class="mt-3 text-[14px] text-neutral-700">Persuasive flows, clear messaging, and measured outcomes that grow revenue.</p>
+          </div>
+
+          <div class="rounded-xl border border-neutral-200 bg-white p-5 hover:shadow-sm transition">
+            <div class="flex items-center gap-3">
+              <span class="inline-flex h-9 w-9 rounded-lg bg-neutral-900 text-white items-center justify-center">
+                <i data-lucide="palette" class="w-4.5 h-4.5"></i>
+              </span>
+              <p class="text-[15px] font-semibold tracking-tight">Brand Consistency</p>
+            </div>
+            <p class="mt-3 text-[14px] text-neutral-700">Systems and styles that make your brand recognizable across every touchpoint.</p>
+          </div>
+
+          <div class="rounded-xl border border-neutral-200 bg-white p-5 hover:shadow-sm transition">
+            <div class="flex items-center gap-3">
+              <span class="inline-flex h-9 w-9 rounded-lg bg-neutral-900 text-white items-center justify-center">
+                <i data-lucide="smartphone" class="w-4.5 h-4.5"></i>
+              </span>
+              <p class="text-[15px] font-semibold tracking-tight">Mobile &amp; SEO Ready</p>
+            </div>
+            <p class="mt-3 text-[14px] text-neutral-700">Responsive layouts that rank better and look flawless across devices.</p>
+          </div>
+
+          <div class="rounded-xl border border-neutral-200 bg-white p-5 hover:shadow-sm transition">
+            <div class="flex items-center gap-3">
+              <span class="inline-flex h-9 w-9 rounded-lg bg-neutral-900 text-white items-center justify-center">
+                <i data-lucide="life-buoy" class="w-4.5 h-4.5"></i>
+              </span>
+              <p class="text-[15px] font-semibold tracking-tight">Ongoing Support</p>
+            </div>
+            <p class="mt-3 text-[14px] text-neutral-700">From launch to iteration, I stay aligned with your KPIs and roadmap.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Process -->
+    <section id="process" class="relative">
+      <div class="max-w-7xl mx-auto px-6 py-12 reveal">
+        <div class="flex items-start justify-between gap-6 flex-col lg:flex-row">
+          <div class="max-w-xl">
+            <h2 class="text-2xl sm:text-3xl font-semibold tracking-tight text-neutral-900">Design Solutions Made Simple</h2>
+            <p class="mt-3 text-[15px] text-neutral-700">Clear steps and transparent communication so you always know what’s next.</p>
+          </div>
+          <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-neutral-200 bg-white shadow-sm">
+            <i data-lucide="file-text" class="w-4 h-4 text-blue-600"></i>
+            <span class="text-[13px] text-neutral-700">Share Brief &amp; Get Proposal</span>
+          </div>
+        </div>
+
+        <div class="mt-8">
+          <div class="relative">
+            <div class="absolute left-0 right-0 top-4 h-0.5 bg-neutral-200"></div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <!-- Step 1 -->
+              <div class="relative bg-white border border-neutral-200 rounded-xl p-5">
+                <div class="flex items-center gap-3">
+                  <span class="inline-flex h-8 w-8 rounded-full bg-blue-600 text-white items-center justify-center text-[13px] font-semibold">1</span>
+                  <p class="text-[15px] font-semibold tracking-tight">Discovery Call</p>
+                </div>
+                <p class="mt-3 text-[14px] text-neutral-700">We align on goals, audience, scope, and success metrics to ensure the right fit.</p>
+                
+              </div>
+
+              <!-- Step 2 -->
+              <div class="relative bg-white border border-neutral-200 rounded-xl p-5">
+                <div class="flex items-center gap-3">
+                  <span class="inline-flex h-8 w-8 rounded-full bg-blue-600 text-white items-center justify-center text-[13px] font-semibold">2</span>
+                  <p class="text-[15px] font-semibold tracking-tight">Proposal &amp; Roadmap</p>
+                </div>
+                <p class="mt-3 text-[14px] text-neutral-700">You’ll get timelines, deliverables, and pricing—no surprises, just clarity.</p>
+                
+              </div>
+
+              <!-- Step 3 -->
+              <div class="relative bg-white border border-neutral-200 rounded-xl p-5">
+                <div class="flex items-center gap-3">
+                  <span class="inline-flex h-8 w-8 rounded-full bg-blue-600 text-white items-center justify-center text-[13px] font-semibold">3</span>
+                  <p class="text-[15px] font-semibold tracking-tight">Design &amp; Delivery</p>
+                </div>
+                <p class="mt-3 text-[14px] text-neutral-700">Iterative design, regular updates, and a final build ready to launch.</p>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="testimonials" class="relative">
+      <div class="max-w-7xl mx-auto px-6 py-12 reveal">
+        <h2 class="text-2xl sm:text-3xl font-semibold tracking-tight text-neutral-900">See What Clients Say</h2>
+        <p class="mt-2 text-[15px] text-neutral-700">It’s not just about looks—it’s about experiences that inspire, convert, and deliver results.</p>
+
+        <div class="mt-6 grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+          <!-- Testimonial Card -->
+          <div class="rounded-xl border border-neutral-200 bg-white p-5">
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-3">
+                <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&amp;w=400&amp;auto=format&amp;fit=crop" alt="Client avatar" class="h-9 w-9 rounded-full object-cover">
+                <div>
+                  <p class="text-[14px] font-semibold tracking-tight">Emily R.</p>
+                  <p class="text-[12px] text-neutral-600">Founder, D2C Skincare</p>
+                </div>
+              </div>
+              <div class="flex text-amber-500">
+                <i data-lucide="star" class="w-4 h-4 fill-amber-400 stroke-amber-500"></i>
+                <i data-lucide="star" class="w-4 h-4 fill-amber-400 stroke-amber-500"></i>
+                <i data-lucide="star" class="w-4 h-4 fill-amber-400 stroke-amber-500"></i>
+                <i data-lucide="star" class="w-4 h-4 fill-amber-400 stroke-amber-500"></i>
+                <i data-lucide="star" class="w-4 h-4 fill-amber-400 stroke-amber-500"></i>
+              </div>
+            </div>
+            <p class="mt-3 text-[14px] text-neutral-700">Jaykee delivered a beautiful, fast site that elevated our brand and boosted conversions. A joy to work with!</p>
+          </div>
+
+          <div class="rounded-xl border border-neutral-200 bg-white p-5">
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-3">
+                <img src="https://images.unsplash.com/photo-1621619856624-42fd193a0661?w=1080&amp;q=80" alt="Client avatar" class="h-9 w-9 rounded-full object-cover">
+                <div>
+                  <p class="text-[14px] font-semibold tracking-tight">Tom F.</p>
+                  <p class="text-[12px] text-neutral-600">Head of Growth</p>
+                </div>
+              </div>
+              <div class="flex text-amber-500">
+                <i data-lucide="star" class="w-4 h-4 fill-amber-400 stroke-amber-500"></i>
+                <i data-lucide="star" class="w-4 h-4 fill-amber-400 stroke-amber-500"></i>
+                <i data-lucide="star" class="w-4 h-4 fill-amber-400 stroke-amber-500"></i>
+                <i data-lucide="star" class="w-4 h-4 fill-amber-400 stroke-amber-500"></i>
+                <i data-lucide="star-half" class="w-4 h-4"></i>
+              </div>
+            </div>
+            <p class="mt-3 text-[14px] text-neutral-700">Thoughtful UX with measurable lift in signups. Communication and speed were excellent throughout.</p>
+          </div>
+
+          <div class="rounded-xl border border-neutral-200 bg-white p-5">
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-3">
+                <img src="https://images.unsplash.com/photo-1554151228-14d9def656e4?q=80&amp;w=400&amp;auto=format&amp;fit=crop" alt="Client avatar" class="h-9 w-9 rounded-full object-cover">
+                <div>
+                  <p class="text-[14px] font-semibold tracking-tight">Jordan T.</p>
+                  <p class="text-[12px] text-neutral-600">Creative Director</p>
+                </div>
+              </div>
+              <div class="flex text-amber-500">
+                <i data-lucide="star" class="w-4 h-4 fill-amber-400 stroke-amber-500"></i>
+                <i data-lucide="star" class="w-4 h-4 fill-amber-400 stroke-amber-500"></i>
+                <i data-lucide="star" class="w-4 h-4 fill-amber-400 stroke-amber-500"></i>
+                <i data-lucide="star" class="w-4 h-4 fill-amber-400 stroke-amber-500"></i>
+                <i data-lucide="star" class="w-4 h-4 fill-amber-400 stroke-amber-500"></i>
+              </div>
+            </div>
+            <p class="mt-3 text-[14px] text-neutral-700">Designs that feel premium and purposeful. Our team loved the attention to detail.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="relative">
+      <div class="max-w-7xl mx-auto px-6 py-12 reveal">
+        <div class="grid lg:grid-cols-2 gap-8">
+          <div>
+            <h2 class="text-2xl sm:text-3xl font-semibold tracking-tight text-neutral-900">Get In Touch</h2>
+            <p class="mt-3 text-[15px] text-neutral-700">Ready to elevate your brand? Whether you’re launching, rebranding, or optimizing, I can help craft a site that drives results.</p>
+
+            <div class="mt-6 space-y-3">
+              <div class="flex items-center gap-3 rounded-xl border border-neutral-200 bg-white p-4">
+                <span class="inline-flex h-9 w-9 rounded-lg bg-blue-600/10 text-blue-700 items-center justify-center">
+                  <i data-lucide="phone" class="w-4.5 h-4.5"></i>
+                </span>
+                <div>
+                  <p class="text-[13px] text-neutral-600">Call</p>
+                    <a href="tel:+639455383087" class="text-[14px] font-medium hover:underline">+63 945 538 3087</a>
+                </div>
+              </div>
+              <div class="flex items-center gap-3 rounded-xl border border-neutral-200 bg-white p-4">
+                <span class="inline-flex h-9 w-9 rounded-lg bg-blue-600/10 text-blue-700 items-center justify-center">
+                  <i data-lucide="mail" class="w-4.5 h-4.5"></i>
+                </span>
+                <div>
+                  <p class="text-[13px] text-neutral-600">Email</p>
+                    <a href="mailto:jaykeeabaacreatives@gmail.com" class="text-[14px] font-medium hover:underline">jaykeeabaacreatives@gmail.com</a>
+                </div>
+              </div>
+              <div class="flex items-center gap-3 rounded-xl border border-neutral-200 bg-white p-4">
+                <span class="inline-flex h-9 w-9 rounded-lg bg-blue-600/10 text-blue-700 items-center justify-center">
+                  <i data-lucide="link-2" class="w-4.5 h-4.5"></i>
+                </span>
+                <div>
+                  <p class="text-[13px] text-neutral-600">Links</p>
+                  <div class="flex flex-wrap gap-2">
+                    <a href="#" class="text-[13px] px-2.5 py-1 rounded-full border border-neutral-200 hover:bg-neutral-50">Portfolio</a>
+                    
+                    <a href="#" class="text-[13px] px-2.5 py-1 rounded-full border border-neutral-200 hover:bg-neutral-50">Resume</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="mt-8 rounded-2xl overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1545239351-1141bd82e8a6?q=80&amp;w=1600&amp;auto=format&amp;fit=crop" alt="Minimal workspace" class="w-full h-56 object-cover">
+            </div>
+          </div>
+
+          <div class="rounded-2xl border border-neutral-200 bg-white p-6 shadow-sm">
+            <h3 class="text-xl font-semibold tracking-tight text-neutral-900">Start Your Project</h3>
+            <form id="contactForm" class="mt-5 space-y-4" action="https://formspree.io/f/xovlnvdv" method="POST">
+              <div class="grid sm:grid-cols-2 gap-3">
+                <div>
+                  <label class="text-[13px] text-neutral-700">Full Name</label>
+                  <input type="text" name="name" required="" placeholder="Your name" class="mt-1 w-full rounded-lg border border-neutral-300 bg-white px-3 py-2 text-[14px] focus:outline-none focus:ring-2 focus:ring-blue-600/20 focus:border-blue-600">
+                </div>
+                <div>
+                  <label class="text-[13px] text-neutral-700">Phone</label>
+                  <input type="tel" name="phone" placeholder="Optional" class="mt-1 w-full rounded-lg border border-neutral-300 bg-white px-3 py-2 text-[14px] focus:outline-none focus:ring-2 focus:ring-blue-600/20 focus:border-blue-600">
+                </div>
+              </div>
+              <div>
+                <label class="text-[13px] text-neutral-700">Email</label>
+                <input type="email" name="email" required="" placeholder="you@example.com" class="mt-1 w-full rounded-lg border border-neutral-300 bg-white px-3 py-2 text-[14px] focus:outline-none focus:ring-2 focus:ring-blue-600/20 focus:border-blue-600">
+              </div>
+              <div>
+                <label class="text-[13px] text-neutral-700">Subject</label>
+                <input type="text" name="subject" placeholder="Project topic" class="mt-1 w-full rounded-lg border border-neutral-300 bg-white px-3 py-2 text-[14px] focus:outline-none focus:ring-2 focus:ring-blue-600/20 focus:border-blue-600">
+              </div>
+              <div>
+                <label class="text-[13px] text-neutral-700">Message</label>
+                <textarea rows="5" name="message" placeholder="Tell me about your goals, timeline, and budget." class="mt-1 w-full rounded-lg border border-neutral-300 bg-white px-3 py-2 text-[14px] focus:outline-none focus:ring-2 focus:ring-blue-600/20 focus:border-blue-600"></textarea>
+              </div>
+              <input type="hidden" name="_subject" value="New Project Inquiry from Portfolio">
+              <button type="submit" class="w-full inline-flex items-center justify-center gap-2 rounded-lg bg-gradient-to-r from-blue-600 to-indigo-500 text-white px-4 py-2.5 text-[14px] font-medium hover:brightness-110 transition">
+                <i data-lucide="send" class="w-4 h-4"></i>
+                Submit
+              </button>
+              <p id="formMsg" class="hidden text-[13px] text-emerald-600 mt-2">Thanks! I’ll get back to you within 24 hours.</p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="border-t border-neutral-200">
+      <div class="max-w-7xl mx-auto px-6 py-8">
+        <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div class="flex items-center gap-2">
+            <div class="h-8 w-8 rounded-md bg-neutral-900 text-white grid place-items-center">
+              <span class="text-sm font-semibold tracking-tight">JA</span>
+            </div>
+            <p class="text-[14px] text-neutral-600">© <span id="year"></span> Jaykee Aba-a. All rights reserved.</p>
+          </div>
+          <div class="flex items-center gap-2">
+            <a href="#" class="inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-full border border-neutral-200 text-[13px] hover:bg-neutral-50">
+              <i data-lucide="globe" class="w-4 h-4"></i> Website
+            </a>
+            
+            <a href="#" class="inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-full border border-neutral-200 text-[13px] hover:bg-neutral-50">
+              <i data-lucide="user" class="w-4 h-4"></i> About
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+      // Initialize icons
+      lucide.createIcons();
+
+      // Mobile menu
+      const mobileBtn = document.getElementById('mobileMenuBtn');
+      const mobileMenu = document.getElementById('mobileMenu');
+      if (mobileBtn) {
+        mobileBtn.addEventListener('click', () => {
+          mobileMenu.classList.toggle('hidden');
+          const icon = mobileBtn.querySelector('i');
+          if (icon) {
+            icon.setAttribute('data-lucide', mobileMenu.classList.contains('hidden') ? 'menu' : 'x');
+            lucide.createIcons();
+          }
+        });
+      }
+
+      // Projects pagination controls
+      const scroller = document.getElementById('projScroller');
+      const prev = document.getElementById('projPrev');
+      const next = document.getElementById('projNext');
+      
+      let currentPage = 0;
+      const projectsPerPage = 6;
+      
+      function updateNavigationButtons() {
+        if (!scroller || !prev || !next) return;
+        
+        const totalProjects = scroller.children.length;
+        const totalPages = Math.ceil(totalProjects / projectsPerPage);
+        
+        // Disable/enable previous button
+        if (currentPage <= 0) {
+          prev.classList.add('opacity-50', 'cursor-not-allowed');
+          prev.disabled = true;
+        } else {
+          prev.classList.remove('opacity-50', 'cursor-not-allowed');
+          prev.disabled = false;
+        }
+        
+        // Disable/enable next button
+        if (currentPage >= totalPages - 1) {
+          next.classList.add('opacity-50', 'cursor-not-allowed');
+          next.disabled = true;
+        } else {
+          next.classList.remove('opacity-50', 'cursor-not-allowed');
+          next.disabled = false;
+        }
+      }
+      
+      function showProjects() {
+        if (!scroller) return;
+        
+        const totalProjects = scroller.children.length;
+        const startIndex = currentPage * projectsPerPage;
+        const endIndex = Math.min(startIndex + projectsPerPage, totalProjects);
+        
+        // Hide all projects
+        Array.from(scroller.children).forEach((project, index) => {
+          if (index >= startIndex && index < endIndex) {
+            project.style.display = 'block';
+          } else {
+            project.style.display = 'none';
+          }
+        });
+        
+        updateNavigationButtons();
+      }
+      
+      if (prev && next && scroller) {
+        // Initial state
+        showProjects();
+        
+        // Click handlers
+        prev.addEventListener('click', () => {
+          if (!prev.disabled && currentPage > 0) {
+            currentPage--;
+            showProjects();
+          }
+        });
+        
+        next.addEventListener('click', () => {
+          if (!next.disabled) {
+            const totalProjects = scroller.children.length;
+            const totalPages = Math.ceil(totalProjects / projectsPerPage);
+            if (currentPage < totalPages - 1) {
+              currentPage++;
+              showProjects();
+            }
+          }
+        });
+      }
+
+      // Contact form (demo)
+      const form = document.getElementById('contactForm');
+      const formMsg = document.getElementById('formMsg');
+      if (form) {
+        form.addEventListener('submit', async (e) => {
+          // If the user replaced YOUR_FORM_ID, let the browser submit natively
+          const action = form.getAttribute('action') || '';
+          if (!action.includes('YOUR_FORM_ID')) {
+            return; // allow normal POST to Formspree
+          }
+          // Otherwise, prevent submit until Form ID is configured
+          e.preventDefault();
+          alert('Please configure Formspree first. See setup steps below in the README or message.');
+        });
+      }
+
+      // Year
+      document.getElementById('year').textContent = new Date().getFullYear();
+
+      // Reveal on scroll (visual storytelling)
+      const revealEls = Array.from(document.querySelectorAll('.reveal'));
+      const onIntersect = (entries, observer) => {
+        for (const entry of entries) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            observer.unobserve(entry.target);
+          }
+        }
+      };
+      const io = new IntersectionObserver(onIntersect, { rootMargin: '0px 0px -10% 0px', threshold: 0.1 });
+      revealEls.forEach(el => io.observe(el));
+    </script>
+  
+</body></html>
