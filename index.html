@@ -14,6 +14,61 @@
         .reveal{opacity:0; transform:translateY(16px); transition:opacity .6s ease, transform .6s ease}
         .reveal.is-visible{opacity:1; transform:none}
       }
+      
+      /* Interactive Process Styles */
+      .process-step {
+        position: relative;
+        overflow: hidden;
+      }
+      
+      .process-step::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.1), transparent);
+        transition: left 0.6s ease;
+      }
+      
+      .process-step:hover::before {
+        left: 100%;
+      }
+      
+      .process-step.active {
+        border-color: rgb(59 130 246);
+        box-shadow: 0 10px 25px -5px rgba(59, 130, 246, 0.1), 0 4px 6px -2px rgba(59, 130, 246, 0.05);
+        transform: translateY(-2px);
+      }
+      
+      .process-step.active .step-number {
+        background: linear-gradient(135deg, rgb(59 130 246), rgb(99 102 241));
+        box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+      }
+      
+      .step-details {
+        transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      
+      /* Step navigation buttons removed */
+      
+      #progressLine {
+        box-shadow: 0 2px 8px rgba(59, 130, 246, 0.3);
+      }
+      
+      /* Smooth animations for reduced motion users */
+      @media (prefers-reduced-motion: reduce) {
+        .process-step,
+        .step-details,
+        #progressLine {
+          transition: none;
+        }
+        
+        .process-step::before {
+          display: none;
+        }
+      }
     </style>
   </head>
   <body class="antialiased bg-white text-neutral-900" style="font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;">
@@ -383,9 +438,9 @@
         <div class="flex items-start justify-between gap-6 flex-col lg:flex-row">
           <div class="max-w-xl">
             <h2 class="text-2xl sm:text-3xl font-semibold tracking-tight text-neutral-900">Design Solutions Made Simple</h2>
-            <p class="mt-3 text-[15px] text-neutral-700">Clear steps and transparent communication so you always know what’s next.</p>
+            <p class="mt-3 text-[15px] text-neutral-700">Clear steps and transparent communication so you always know what's next.</p>
           </div>
-          <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-neutral-200 bg-white shadow-sm">
+          <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-neutral-200 bg-white shadow-sm hover:shadow-md transition-all duration-300 cursor-pointer">
             <i data-lucide="file-text" class="w-4 h-4 text-blue-600"></i>
             <span class="text-[13px] text-neutral-700">Share Brief &amp; Get Proposal</span>
           </div>
@@ -393,38 +448,107 @@
 
         <div class="mt-8">
           <div class="relative">
-            <div class="absolute left-0 right-0 top-4 h-0.5 bg-neutral-200"></div>
+            <!-- Animated Progress Line -->
+            <div class="absolute left-0 right-0 top-4 h-0.5 bg-neutral-200">
+              <div id="progressLine" class="h-full bg-gradient-to-r from-blue-600 to-indigo-500 transition-all duration-1000 ease-out" style="width: 0%"></div>
+            </div>
+            
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
               <!-- Step 1 -->
-              <div class="relative bg-white border border-neutral-200 rounded-xl p-5">
+              <div class="process-step relative bg-white border border-neutral-200 rounded-xl p-5 cursor-pointer transition-all duration-500 hover:shadow-lg hover:border-blue-300 hover:-translate-y-1 group" data-step="1">
                 <div class="flex items-center gap-3">
-                  <span class="inline-flex h-8 w-8 rounded-full bg-blue-600 text-white items-center justify-center text-[13px] font-semibold">1</span>
-                  <p class="text-[15px] font-semibold tracking-tight">Discovery Call</p>
+                  <span class="step-number inline-flex h-8 w-8 rounded-full bg-blue-600 text-white items-center justify-center text-[13px] font-semibold transition-all duration-300 group-hover:scale-110 group-hover:bg-blue-700">1</span>
+                  <p class="text-[15px] font-semibold tracking-tight transition-colors duration-300 group-hover:text-blue-700">Discovery Call</p>
                 </div>
-                <p class="mt-3 text-[14px] text-neutral-700">We align on goals, audience, scope, and success metrics to ensure the right fit.</p>
+                <p class="mt-3 text-[14px] text-neutral-700 transition-colors duration-300 group-hover:text-neutral-600">We align on goals, audience, scope, and success metrics to ensure the right fit.</p>
                 
+                <!-- Hidden detailed content -->
+                <div class="step-details mt-4 opacity-0 max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
+                  <div class="border-t border-neutral-100 pt-4">
+                    <ul class="space-y-2 text-[13px] text-neutral-600">
+                      <li class="flex items-center gap-2">
+                        <i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500"></i>
+                        Project goals alignment
+                      </li>
+                      <li class="flex items-center gap-2">
+                        <i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500"></i>
+                        Target audience analysis
+                      </li>
+                      <li class="flex items-center gap-2">
+                        <i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500"></i>
+                        Success metrics definition
+                      </li>
+                    </ul>
+                  </div>
+                </div>
               </div>
 
               <!-- Step 2 -->
-              <div class="relative bg-white border border-neutral-200 rounded-xl p-5">
+              <div class="process-step relative bg-white border border-neutral-200 rounded-xl p-5 cursor-pointer transition-all duration-500 hover:shadow-lg hover:border-blue-300 hover:-translate-y-1 group" data-step="2">
                 <div class="flex items-center gap-3">
-                  <span class="inline-flex h-8 w-8 rounded-full bg-blue-600 text-white items-center justify-center text-[13px] font-semibold">2</span>
-                  <p class="text-[15px] font-semibold tracking-tight">Proposal &amp; Roadmap</p>
+                  <span class="step-number inline-flex h-8 w-8 rounded-full bg-blue-600 text-white items-center justify-center text-[13px] font-semibold transition-all duration-300 group-hover:scale-110 group-hover:bg-blue-700">2</span>
+                  <p class="text-[15px] font-semibold tracking-tight transition-colors duration-300 group-hover:text-blue-700">Proposal &amp; Roadmap</p>
                 </div>
-                <p class="mt-3 text-[14px] text-neutral-700">You’ll get timelines, deliverables, and pricing—no surprises, just clarity.</p>
+                <p class="mt-3 text-[14px] text-neutral-700 transition-colors duration-300 group-hover:text-neutral-600">You'll get timelines, deliverables, and pricing—no surprises, just clarity.</p>
                 
+                <!-- Hidden detailed content -->
+                <div class="step-details mt-4 opacity-0 max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
+                  <div class="border-t border-neutral-100 pt-4">
+                    <ul class="space-y-2 text-[13px] text-neutral-600">
+                      <li class="flex items-center gap-2">
+                        <i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500"></i>
+                        Detailed project timeline
+                      </li>
+                      <li class="flex items-center gap-2">
+                        <i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500"></i>
+                        Clear deliverables list
+                      </li>
+                      <li class="flex items-center gap-2">
+                        <i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500"></i>
+                        Transparent pricing
+                      </li>
+                    </ul>
+                  </div>
+                </div>
               </div>
 
               <!-- Step 3 -->
-              <div class="relative bg-white border border-neutral-200 rounded-xl p-5">
+              <div class="process-step relative bg-white border border-neutral-200 rounded-xl p-5 cursor-pointer transition-all duration-500 hover:shadow-lg hover:border-blue-300 hover:-translate-y-1 group" data-step="3">
                 <div class="flex items-center gap-3">
-                  <span class="inline-flex h-8 w-8 rounded-full bg-blue-600 text-white items-center justify-center text-[13px] font-semibold">3</span>
-                  <p class="text-[15px] font-semibold tracking-tight">Design &amp; Delivery</p>
+                  <span class="step-number inline-flex h-8 w-8 rounded-full bg-blue-600 text-white items-center justify-center text-[13px] font-semibold transition-all duration-300 group-hover:scale-110 group-hover:bg-blue-700">3</span>
+                  <p class="text-[15px] font-semibold tracking-tight transition-colors duration-300 group-hover:text-blue-700">Design &amp; Delivery</p>
                 </div>
-                <p class="mt-3 text-[14px] text-neutral-700">Iterative design, regular updates, and a final build ready to launch.</p>
+                <p class="mt-3 text-[14px] text-neutral-700 transition-colors duration-300 group-hover:text-neutral-600">Iterative design, regular updates, and a final build ready to launch.</p>
                 
+                <!-- Hidden detailed content -->
+                <div class="step-details mt-4 opacity-0 max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
+                  <div class="border-t border-neutral-100 pt-4">
+                    <ul class="space-y-2 text-[13px] text-neutral-600">
+                      <li class="flex items-center gap-2">
+                        <i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500"></i>
+                        Iterative design process
+                      </li>
+                      <li class="flex items-center gap-2">
+                        <i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500"></i>
+                        Regular progress updates
+                      </li>
+                      <li class="flex items-center gap-2">
+                        <i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500"></i>
+                        Launch-ready final build
+                      </li>
+                    </ul>
+                  </div>
+                </div>
               </div>
             </div>
+          </div>
+          
+          <!-- Auto-play controls -->
+          <div class="mt-8 flex items-center justify-center">
+            <button id="autoPlayBtn" class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-neutral-200 bg-white text-neutral-700 hover:bg-neutral-50 transition-all duration-300">
+              <i data-lucide="play" class="w-4 h-4"></i>
+              <span class="text-[13px] font-medium">Auto Play</span>
+            </button>
           </div>
         </div>
       </div>
@@ -437,46 +561,46 @@
         <p class="mt-2 text-[15px] text-neutral-700">It’s not just about looks—it’s about experiences that inspire, convert, and deliver results.</p>
 
         <div class="mt-6 grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-          <!-- Testimonial Card -->
-          <div class="rounded-xl border border-neutral-200 bg-white p-5">
-            <div class="flex items-center justify-between">
-              <div class="flex items-center gap-3">
-                <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&amp;w=400&amp;auto=format&amp;fit=crop" alt="Client avatar" class="h-9 w-9 rounded-full object-cover">
-                <div>
-                  <p class="text-[14px] font-semibold tracking-tight">Emily R.</p>
-                  <p class="text-[12px] text-neutral-600">Founder, D2C Skincare</p>
-                </div>
-              </div>
-              <div class="flex text-amber-500">
-                <i data-lucide="star" class="w-4 h-4 fill-amber-400 stroke-amber-500"></i>
-                <i data-lucide="star" class="w-4 h-4 fill-amber-400 stroke-amber-500"></i>
-                <i data-lucide="star" class="w-4 h-4 fill-amber-400 stroke-amber-500"></i>
-                <i data-lucide="star" class="w-4 h-4 fill-amber-400 stroke-amber-500"></i>
-                <i data-lucide="star" class="w-4 h-4 fill-amber-400 stroke-amber-500"></i>
-              </div>
-            </div>
-            <p class="mt-3 text-[14px] text-neutral-700">Jaykee delivered a beautiful, fast site that elevated our brand and boosted conversions. A joy to work with!</p>
-          </div>
+           <!-- Testimonial Card -->
+           <div class="rounded-xl border border-neutral-200 bg-white p-5">
+             <div class="flex items-center justify-between">
+               <div class="flex items-center gap-3">
+                 <img src="miranda.jpg" alt="Miranda Rochol" class="h-9 w-9 rounded-full object-cover">
+                 <div>
+                   <p class="text-[14px] font-semibold tracking-tight">Miranda Rochol</p>
+                   <p class="text-[12px] text-neutral-600">NaviRX, LLC</p>
+                 </div>
+               </div>
+               <div class="flex text-amber-500">
+                 <i data-lucide="star" class="w-4 h-4 fill-amber-400 stroke-amber-500"></i>
+                 <i data-lucide="star" class="w-4 h-4 fill-amber-400 stroke-amber-500"></i>
+                 <i data-lucide="star" class="w-4 h-4 fill-amber-400 stroke-amber-500"></i>
+                 <i data-lucide="star" class="w-4 h-4 fill-amber-400 stroke-amber-500"></i>
+                 <i data-lucide="star" class="w-4 h-4 fill-amber-400 stroke-amber-500"></i>
+               </div>
+             </div>
+             <p class="mt-3 text-[14px] text-neutral-700">Jaykee delivered a beautiful, fast site that elevated our brand and boosted conversions. A joy to work with!</p>
+           </div>
 
-          <div class="rounded-xl border border-neutral-200 bg-white p-5">
-            <div class="flex items-center justify-between">
-              <div class="flex items-center gap-3">
-                <img src="https://images.unsplash.com/photo-1621619856624-42fd193a0661?w=1080&amp;q=80" alt="Client avatar" class="h-9 w-9 rounded-full object-cover">
-                <div>
-                  <p class="text-[14px] font-semibold tracking-tight">Tom F.</p>
-                  <p class="text-[12px] text-neutral-600">Head of Growth</p>
-                </div>
-              </div>
-              <div class="flex text-amber-500">
-                <i data-lucide="star" class="w-4 h-4 fill-amber-400 stroke-amber-500"></i>
-                <i data-lucide="star" class="w-4 h-4 fill-amber-400 stroke-amber-500"></i>
-                <i data-lucide="star" class="w-4 h-4 fill-amber-400 stroke-amber-500"></i>
-                <i data-lucide="star" class="w-4 h-4 fill-amber-400 stroke-amber-500"></i>
-                <i data-lucide="star-half" class="w-4 h-4"></i>
-              </div>
-            </div>
-            <p class="mt-3 text-[14px] text-neutral-700">Thoughtful UX with measurable lift in signups. Communication and speed were excellent throughout.</p>
-          </div>
+           <div class="rounded-xl border border-neutral-200 bg-white p-5">
+             <div class="flex items-center justify-between">
+               <div class="flex items-center gap-3">
+                 <img src="austin.jpg" alt="Austin Bowling" class="h-9 w-9 rounded-full object-cover">
+                 <div>
+                   <p class="text-[14px] font-semibold tracking-tight">Austin Bowling</p>
+                   <p class="text-[12px] text-neutral-600">Lexington Content Marketing</p>
+                 </div>
+               </div>
+               <div class="flex text-amber-500">
+                 <i data-lucide="star" class="w-4 h-4 fill-amber-400 stroke-amber-500"></i>
+                 <i data-lucide="star" class="w-4 h-4 fill-amber-400 stroke-amber-500"></i>
+                 <i data-lucide="star" class="w-4 h-4 fill-amber-400 stroke-amber-500"></i>
+                 <i data-lucide="star" class="w-4 h-4 fill-amber-400 stroke-amber-500"></i>
+                 <i data-lucide="star-half" class="w-4 h-4"></i>
+               </div>
+             </div>
+             <p class="mt-3 text-[14px] text-neutral-700">Thoughtful UX with measurable lift in signups. Communication and speed were excellent throughout.</p>
+           </div>
 
           <div class="rounded-xl border border-neutral-200 bg-white p-5">
             <div class="flex items-center justify-between">
@@ -734,6 +858,112 @@
       };
       const io = new IntersectionObserver(onIntersect, { rootMargin: '0px 0px -10% 0px', threshold: 0.1 });
       revealEls.forEach(el => io.observe(el));
+
+      // Interactive Process Section
+      let currentActiveStep = 1;
+      let isAutoPlaying = false;
+      let autoPlayInterval = null;
+
+      const processSteps = document.querySelectorAll('.process-step');
+      const progressLine = document.getElementById('progressLine');
+      const autoPlayBtn = document.getElementById('autoPlayBtn');
+
+      // Update progress line
+      function updateProgressLine(step) {
+        const percentage = ((step - 1) / 2) * 100;
+        progressLine.style.width = percentage + '%';
+      }
+
+      // Activate step
+      function activateStep(stepNumber) {
+        // Remove active state from all steps
+        processSteps.forEach(step => {
+          step.classList.remove('active');
+          const details = step.querySelector('.step-details');
+          details.style.opacity = '0';
+          details.style.maxHeight = '0';
+        });
+
+        // Activate current step
+        const activeStep = document.querySelector(`[data-step="${stepNumber}"]`);
+        if (activeStep) {
+          activeStep.classList.add('active');
+          const details = activeStep.querySelector('.step-details');
+          details.style.opacity = '1';
+          details.style.maxHeight = details.scrollHeight + 'px';
+        }
+
+        // Navigation buttons removed - only auto-play control remains
+
+        currentActiveStep = stepNumber;
+        updateProgressLine(stepNumber);
+      }
+
+      // Auto-play functionality
+      function startAutoPlay() {
+        if (autoPlayInterval) return;
+        
+        isAutoPlaying = true;
+        autoPlayBtn.innerHTML = '<i data-lucide="pause" class="w-4 h-4"></i><span class="text-[13px] font-medium">Pause</span>';
+        lucide.createIcons();
+
+        autoPlayInterval = setInterval(() => {
+          currentActiveStep = currentActiveStep >= 3 ? 1 : currentActiveStep + 1;
+          activateStep(currentActiveStep);
+        }, 3000);
+      }
+
+      function stopAutoPlay() {
+        if (!autoPlayInterval) return;
+        
+        isAutoPlaying = false;
+        clearInterval(autoPlayInterval);
+        autoPlayInterval = null;
+        autoPlayBtn.innerHTML = '<i data-lucide="play" class="w-4 h-4"></i><span class="text-[13px] font-medium">Auto Play</span>';
+        lucide.createIcons();
+      }
+
+      // Event listeners
+      if (processSteps.length > 0) {
+        // Click on step cards
+        processSteps.forEach(step => {
+          step.addEventListener('click', () => {
+            const stepNumber = parseInt(step.dataset.step);
+            activateStep(stepNumber);
+            stopAutoPlay();
+          });
+
+          // Hover effects for progress line
+          step.addEventListener('mouseenter', () => {
+            const stepNumber = parseInt(step.dataset.step);
+            updateProgressLine(stepNumber);
+          });
+
+          step.addEventListener('mouseleave', () => {
+            updateProgressLine(currentActiveStep);
+          });
+        });
+
+        // Auto-play button
+        if (autoPlayBtn) {
+          autoPlayBtn.addEventListener('click', () => {
+            if (isAutoPlaying) {
+              stopAutoPlay();
+            } else {
+              startAutoPlay();
+            }
+          });
+        }
+
+        // Step navigation buttons removed - users can only control via auto-play button
+
+        // Initialize with step 1 and start auto-play
+        activateStep(1);
+        // Start auto-play after a short delay to let the page load
+        setTimeout(() => {
+          startAutoPlay();
+        }, 1000);
+      }
     </script>
   
 </body></html>
